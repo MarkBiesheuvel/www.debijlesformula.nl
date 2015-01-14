@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="home.html" class="navbar-brand">Wiskunde bijles</a>
+            <a href="home.php" class="navbar-brand">Wiskunde bijles</a>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
             <ul class="nav navbar-nav navbar-right">
