@@ -115,9 +115,10 @@
                 <img src="images/feature2.png" class="img-responsive" alt="feature2"/>
             </div>
         </div>
+        <div class="divider"></div>
     </div>
 </div>
-
+<?php /*
 <div id="pricing">
     <div class="container">
         <div class="row header">
@@ -211,7 +212,7 @@
         </div>
     </div>
 </div>
-
+*/ ?>
 <div id="testimonials">
     <div class="container">
         <div class="row header">
