@@ -1,3 +1,4 @@
 images/source/*
-css/*
-!css/compiled/*
+css/bootstrap/*
+css/modules/*
+css/partials/*
