@@ -1,7 +1,7 @@
-/.sass-cache
-/node_modules
-/.idea
-/vendor
-/\.env
-/logs
-/cache
+.sass-cache/*
+node_modules/*
+.idea/*
+vendor/*
+\.env
+logs/*
+cache/*

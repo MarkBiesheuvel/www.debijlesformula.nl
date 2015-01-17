@@ -40,7 +40,7 @@
                 </p>
             </div>
             <div class="col-md-6 image">
-                <img src="images/uitleg.png" class="img-responsive" alt="feature1"/>
+                <img src="images/compressed/uitleg.png" class="img-responsive" alt="feature1"/>
             </div>
         </div>
         <div class="divider"></div>
@@ -54,7 +54,7 @@
                 </p>
             </div>
             <div class="col-md-6 image">
-                <img src="images/begeleiding.png" class="img-responsive" alt="feature2"/>
+                <img src="images/compressed/begeleiding.png" class="img-responsive" alt="feature2"/>
             </div>
         </div>
         <div class="divider"></div>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="author">
-                        <img src="../images/testimonials/max.jpg" class="pic" alt="Max Tromp"/>
+                        <img src="../images/compressed/testimonials/max.jpg" class="pic" alt="Max Tromp"/>
 
                         <div class="name">Max Tromp</div>
                         <div class="company">Wiskunde A, 5/6VWO</div>
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <div class="author">
-                        <img src="../images/testimonials/marianne.jpg" class="pic" alt="testimonial2"/>
+                        <img src="../images/compressed/testimonials/marianne.jpg" class="pic" alt="testimonial2"/>
 
                         <div class="name">Marianne Griemink</div>
                         <div class="company">Wiskunde A, 3HAVO</div>
