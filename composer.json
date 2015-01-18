@@ -4,7 +4,8 @@
         "slim/slim": "2.*",
         "slim/views": "0.1.*",
         "slim/logger": "0.1.*",
-        "twig/twig": "~1.0"
+        "twig/twig": "~1.0",
+        "mandrill/mandrill": "1.0.*"
     },
     "require-dev": {
     }
