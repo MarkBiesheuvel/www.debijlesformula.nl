@@ -69,17 +69,21 @@ $app->get('/contact', function () use ($app) {
 });
 
 $app->post('/contact', function () use ($app) {
+
+    $keys = array('name_parent', 'name_student', 'email', 'phone', 'level', 'year', 'subject', 'message');
+    $params = array();
+
+    foreach ($keys as $key) {
+        $params[$key] = $app->request->post($key);
+    }
+
+    $html = $app->view->render('email.html.twig', $params);
+
     $mandrill = new Mandrill();
 
-    // TODO: render view
-
-    /*/
-    $name = 'Pietje';
-    $text = 'Hoi, kan ik bijles krijgen?';
-
     $message = array(
-        'html' => "<p>$name</p><p>$text</p>",
-        'subject' => 'Contactformulier | ' . $name,
+        'html' => $html,
+        'subject' => 'Contactformulier | ' . $params['name_student'],
         'from_email' => 'info@wiskundebijl.es',
         'from_name' => 'Wiskundebijl.es',
         'to' => array(
@@ -89,21 +93,19 @@ $app->post('/contact', function () use ($app) {
                 'type' => 'to'
             )
         ),
-        'headers' => array('Reply-To' => 'mail@markbiesheuvel.nl'),
+        'headers' => array('Reply-To' => $params['email']),
         'important' => false,
         'tags' => array('contact-form'),
         'track_opens' => false,
         'track_clicks' => false,
         'auto_text' => true,
+        'inline_css' => true,
     );
 
     $result = $mandrill->messages->send($message, false);
-    /*/
-    $result = array(0=>array('status'=>'sent'));
-    //*/
 
     if($result[0]['status'] == 'sent'){
-        $app->flash('info', 'Uw bericht is verzenden. Ik zal hier zo spoedig mogelijk op reageren.');
+        $app->flash('info', 'Uw bericht is verzonden. Ik zal hier zo spoedig mogelijk op reageren.');
     }else{
         $app->flash('error', 'Er is iets mis gegaan tijdens het versuren van uw bericht. U kunt uw bericht ook mailen naar <a href="mailto:mail@markbiesheuvel.nl">mail@markbiesheuvel.nl</a>.');
     }
