@@ -39,6 +39,13 @@ $app->view()->parserExtensions = array(
     new \Slim\Views\TwigExtension(),
 );
 
+if (extension_loaded ('newrelic')) {
+    // Named transactions in New Relic
+    $app->hook('slim.before.dispatch', function() use ($app) {
+        newrelic_name_transaction($app->router()->getCurrentRoute()->getPattern());
+    });
+}
+
 // Routes
 $app->get('/', function () use ($app) {
     $app->render('home.html.twig', array(
@@ -59,7 +66,7 @@ $app->get('/pakketen', function () use ($app) {
     $app->render('pakketen.html.twig', array(
         'body_id' => 'pricing',
         'header_class' => 'normal',
-        'default_rate' => 40,
+        'default_rate' => 45,
         'packages' => array(
             array(
                 'name' => 'Pakket A',
@@ -84,9 +91,31 @@ $app->get('/pakketen', function () use ($app) {
 });
 
 $app->get('/contact', function () use ($app) {
+
+
+    $question = $app->request->get('vraag');
+
+    switch($question){
+        case 'kennismakingsgesprek':
+            $message = 'Zou je contact met me kunnen opnemen om een kennismakingsgesprek in te plannen?';
+            break;
+        case 'Pakket A':
+        case 'Pakket B':
+        case 'Pakket C':
+            $message = 'Graag zou ik ' . $question . ' willen gebruiken.'
+                . ' Wanneer is het mogelijk om de eerste bijles in houden?';
+            break;
+        case 'beschikbaarheid':
+            $message = 'Op welke dagen zou jij bijles kunnen geven?';
+            break;
+        default:
+            $message = '';
+    }
+
     $app->render('contact.html.twig', array(
         'body_id' => 'contact-us',
         'header_class' => 'normal',
+        'message' => $message,
     ));
 });
 
