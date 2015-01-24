@@ -55,9 +55,31 @@ $app->get('/over-mij', function () use ($app) {
 });
 
 $app->get('/pakketen', function () use ($app) {
+
     $app->render('pakketen.html.twig', array(
         'body_id' => 'pricing',
         'header_class' => 'normal',
+        'default_rate' => 40,
+        'packages' => array(
+            array(
+                'name' => 'Pakket A',
+                'class' => 'first',
+                'price' => 210,
+                'hours' => 6,
+            ),
+            array(
+                'name' => 'Pakket B',
+                'class' => 'featured',
+                'price' => 360,
+                'hours' => 12,
+            ),
+            array(
+                'name' => 'Pakket C',
+                'class' => 'last',
+                'price' => 600,
+                'hours' => 24,
+            ),
+        ),
     ));
 });
 
