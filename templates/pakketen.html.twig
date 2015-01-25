@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row header">
             <div class="col-md-12">
-                <h3>Bespaar door meerdere uren tegelijk te reserveren.</h3>
+                <h3>Bespaar met behulp van &eacute;&eacute;n deze pakketen.</h3>
                 <p>Er hoeven geen reiskosten betaald te worden.</p>
             </div>
         </div>
@@ -32,8 +32,8 @@
                             korting
                         </div>
                     </div>
-                    <a class="btn-signup button-clear" href="signup.html">
-                        <span>Start free trial</span>
+                    <a class="btn-signup button-clear" href="contact?vraag={{ package['name'] | url_encode }}">
+                        <span>Vraag dit pakket aan</span>
                     </a>
                 </div>
                 {% endfor %}
@@ -44,7 +44,8 @@
                         <span class="price">{{ default_rate }}</span>
                     </div>
                     <p class="description">
-                        Wil je snel 1 of 2 lessen om voor een proefwerk voor te bereiden?
+                        Wil je snel 1 of 2 lessen om voor een proefwerk voor te bereiden?<br>
+                        Dan kun je een klein aantal bijlessen nemen voor &euro;45&nbsp;per&nbsp;uur.
                     </p>
                 </div>
             </div>
