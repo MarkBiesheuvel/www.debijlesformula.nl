@@ -1,3 +1,9 @@
-RewriteEngine On
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} !^www\.debijlesformule\.nl
+RewriteCond %{HTTP_HOST} !^dev\.debijlesformule\.nl
+RewriteRule (.*) http://www.debijlesformule.nl/$1 [R=302,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
