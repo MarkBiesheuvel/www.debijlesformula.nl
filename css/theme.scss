@@ -3,7 +3,6 @@
 @import "modules/elements";
 
 /* vendor */
-@import "../bootstrap/bootstrap.min.css";
 @import "bootstrap/bootstrap-overrides";
 
 /* config variables */
@@ -18,4 +17,7 @@
 @import "partials/pages/aboutus";
 @import "partials/pages/contactus";
 @import "partials/pages/404";
+
+/* vendor */
+@import "vendor/animate";
 

@@ -24,7 +24,7 @@ RewriteEngine on
   ExpiresByType image/png "access plus 60 days"
   ExpiresByType image/gif "access plus 60 days"
   ExpiresByType image/jpeg "access plus 60 days"
-  ExpiresByType text/css "access plus 1 days"
+  ExpiresByType text/css "access plus 1 week"
   ExpiresByType image/x-icon "access plus 1 month"
   ExpiresByType application/pdf "access plus 1 month"
   ExpiresByType audio/x-wav "access plus 1 month"
