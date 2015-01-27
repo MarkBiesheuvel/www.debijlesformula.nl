@@ -61,9 +61,9 @@ $app->get('/over-mij', function () use ($app) {
     ));
 });
 
-$app->get('/pakketen', function () use ($app) {
+$app->get('/pakketten', function () use ($app) {
 
-    $app->render('pakketen.html.twig', array(
+    $app->render('pakketten.html.twig', array(
         'body_id' => 'pricing',
         'header_class' => 'normal',
         'default_rate' => 45,
