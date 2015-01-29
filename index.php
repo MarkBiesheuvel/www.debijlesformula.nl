@@ -162,4 +162,9 @@ $app->post('/contact', function () use ($app) {
     $app->redirect('/contact');
 });
 
+$app->get('/ping', function () use ($app) {
+    $app->response->headers->set('Content-Type', 'text/plain');
+    echo 'pong';
+});
+
 $app->run();
