@@ -111,7 +111,7 @@ $app->get('/contact', function () use ($app) {
             $message = '';
     }
 
-    $app->render('pages/pages/contact.html.twig', array(
+    $app->render('pages/contact.html.twig', array(
         'body_id' => 'contact-us',
         'header_class' => 'normal',
         'message' => $message,
