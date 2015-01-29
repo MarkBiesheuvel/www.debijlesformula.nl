@@ -46,33 +46,26 @@ if (extension_loaded ('newrelic')) {
     });
 }
 
-$env = $app->environment();
-
-$env['script_min'] = file_get_contents('js/script.min.js');
-
 // Routes
 $app->get('/', function () use ($app) {
-    $app->render('home.html.twig', array(
+    $app->render('pages/home.html.twig', array(
         'body_id' => 'home',
         'header_class' => 'hero',
-        'script_min' => $app->environment()['script_min'],
     ));
 });
 
 $app->get('/over-mij', function () use ($app) {
-    $app->render('over-mij.html.twig', array(
+    $app->render('pages/over-mij.html.twig', array(
         'body_id' => 'about-us',
         'header_class' => 'normal',
-        'script_min' => $app->environment()['script_min'],
     ));
 });
 
 $app->get('/pakketten', function () use ($app) {
 
-    $app->render('pakketten.html.twig', array(
+    $app->render('pages/pakketten.html.twig', array(
         'body_id' => 'pricing',
         'header_class' => 'normal',
-        'script_min' => $app->environment()['script_min'],
         'default_rate' => 45,
         'packages' => array(
             array(
@@ -118,10 +111,9 @@ $app->get('/contact', function () use ($app) {
             $message = '';
     }
 
-    $app->render('contact.html.twig', array(
+    $app->render('pages/pages/contact.html.twig', array(
         'body_id' => 'contact-us',
         'header_class' => 'normal',
-        'script_min' => $app->environment()['script_min'],
         'message' => $message,
     ));
 });

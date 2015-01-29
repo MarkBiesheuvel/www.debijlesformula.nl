@@ -18,13 +18,13 @@ module.exports = function (grunt) {
                 src: ['Gruntfile.js']
             },
             build: {
-                src: ['js/src/*.js']
+                src: ['js/*.js']
             }
         },
         uglify: {
             build: {
-                src: ['js/src/*.js'],
-                dest: 'js/script.min.js',
+                src: ['js/*.js'],
+                dest: 'templates/includes/script.min.js',
                 options: {
                     preserveComments: false
                 }
@@ -42,13 +42,13 @@ module.exports = function (grunt) {
         watch: {
             config: {
                 files: ['Gruntfile.js', 'config.rb'],
-                tasks: ['build:css'],
+                tasks: ['build:css', 'build:js'],
                 options: {
                     reload: true
                 }
             },
             js: {
-                files: ['js/src/*.js'],
+                files: ['js/*.js'],
                 tasks: ['build:js'],
                 options: {
                     interrupt: true
