@@ -2,7 +2,7 @@
 // Only functionality that is needed for this site is kept
 // All HTML needs to stay the same, so it should still work with the original dependencies
 
-(function(document, find, isActive, button, target){
+(function(document, find, button, target){
 
     // Fetch first and only toggle button
     button = document[find]('[data-toggle=collapse]')[0];
@@ -13,9 +13,9 @@
     // Listen to click event
     button.addEventListener('click', function() {
 
-        // Update active variable and set display accordingly
-        target.style.display = (isActive = !isActive)? "block" : "none";
+        // Update class
+        target.classList.toggle('collapse');
     });
 
     // Pass querySelectorAll as parameter as it is used twice (saves characters)
-})(document, 'querySelectorAll', false);
+})(document, 'querySelectorAll');
