@@ -96,13 +96,13 @@ $app->get('/contact', function () use ($app) {
 
     switch($question){
         case 'kennismakingsgesprek':
-            $message = 'Zou je contact met me kunnen opnemen om een kennismakingsgesprek in te plannen?';
+            $message = 'Zou je contact met mij kunnen opnemen om een kennismakingsgesprek in te plannen?';
             break;
         case 'Pakket A':
         case 'Pakket B':
         case 'Pakket C':
             $message = 'Graag zou ik ' . $question . ' willen gebruiken.'
-                . ' Wanneer is het mogelijk om de eerste bijles in houden?';
+                . ' Wanneer is het mogelijk om de eerste bijles te houden?';
             break;
         case 'beschikbaarheid':
             $message = 'Op welke dagen zou jij bijles kunnen geven?';
