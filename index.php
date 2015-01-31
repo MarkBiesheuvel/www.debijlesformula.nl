@@ -51,6 +51,8 @@ $app->get('/', function () use ($app) {
     $app->render('pages/home.html.twig', array(
         'body_id' => 'home',
         'header_class' => 'hero',
+        'js_min' => file_get_contents('includes/script.min.js'),
+        'css_min' => file_get_contents('includes/home.css'),
     ));
 });
 
@@ -58,6 +60,8 @@ $app->get('/over-mij', function () use ($app) {
     $app->render('pages/over-mij.html.twig', array(
         'body_id' => 'about-us',
         'header_class' => 'normal',
+        'js_min' => file_get_contents('includes/script.min.js'),
+        'css_min' => file_get_contents('includes/home.css'),
     ));
 });
 
@@ -66,6 +70,8 @@ $app->get('/pakketten', function () use ($app) {
     $app->render('pages/pakketten.html.twig', array(
         'body_id' => 'pricing',
         'header_class' => 'normal',
+        'js_min' => file_get_contents('includes/script.min.js'),
+        'css_min' => file_get_contents('includes/home.css'),
         'default_rate' => 45,
         'packages' => array(
             array(
@@ -114,6 +120,8 @@ $app->get('/contact', function () use ($app) {
     $app->render('pages/contact.html.twig', array(
         'body_id' => 'contact-us',
         'header_class' => 'normal',
+        'js_min' => file_get_contents('includes/script.min.js'),
+        'css_min' => file_get_contents('includes/home.css'),
         'message' => $message,
     ));
 });

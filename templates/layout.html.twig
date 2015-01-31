@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="google-site-verification" content="cL5ifEtOYz4V7rpM-zMGP1FkwjZ3NS5NfLM5Y8REGh0" />
 
-    <!-- stylesheets -->
-    <link rel="stylesheet" type="text/css" href="/css/compiled/theme.css">
+    <style>{{ css_min }}</style>
 
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,8 +21,11 @@
 
     {% include "partials/footer.html.twig" %}
 
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/compiled/theme.css" lazyload>
+
     <!-- javascript -->
     <script async src='//www.google-analytics.com/analytics.js'></script>
-    <script>{% include "includes/script.min.js" %}</script>
+    <script>{{ js_min }}</script>
 </body>
 </html>

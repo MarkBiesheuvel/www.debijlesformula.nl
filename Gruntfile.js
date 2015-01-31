@@ -24,7 +24,7 @@ module.exports = function (grunt) {
         uglify: {
             build: {
                 src: ['js/*.js'],
-                dest: 'templates/includes/script.min.js',
+                dest: 'includes/script.min.js',
                 options: {
                     preserveComments: false
                 }
@@ -37,6 +37,36 @@ module.exports = function (grunt) {
                     cssDir: 'css/compiled',
                     environment: 'production'
                 }
+            }
+        },
+        penthouse: {
+            home : {
+                outfile : 'includes/home.css',
+                css : 'css/compiled/theme.css',
+                url : 'http://dev.debijlesformule.nl/',
+                width : 1300,
+                height : 900
+            },
+            overmij : {
+                outfile : 'includes/over-mij.css',
+                css : 'css/compiled/theme.css',
+                url : 'http://dev.debijlesformule.nl/over-mij',
+                width : 1300,
+                height : 900
+            },
+            pakketten : {
+                outfile : 'includes/pakketten.css',
+                css : 'css/compiled/theme.css',
+                url : 'http://dev.debijlesformule.nl/pakketten',
+                width : 1300,
+                height : 900
+            },
+            contact : {
+                outfile : 'includes/contact.css',
+                css : 'css/compiled/theme.css',
+                url : 'http://dev.debijlesformule.nl/contact',
+                width : 1300,
+                height : 900
             }
         },
         watch: {
@@ -83,7 +113,13 @@ module.exports = function (grunt) {
     grunt.registerTask(
         'build:css',
         'Compile CSS',
-        ['compass:build']
+        ['compass:build', 'penthouse']
+    );
+
+    grunt.registerTask(
+        'build',
+        'Build everything',
+        ['build:css', 'build:js']
     );
 
     grunt.registerTask('default', ['watch']);
