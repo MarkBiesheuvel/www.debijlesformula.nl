@@ -93,7 +93,7 @@ module.exports = function (grunt) {
                 }
             },
             livereload: {
-                files: ['index.php', 'templates/*.html.twig', 'css/*.css', 'js/*.min.js'],
+                files: ['index.php', 'templates/**/*.html.twig', 'css/*.css', 'js/*.min.js'],
                 options: {
                     livereload: true
                 }
