@@ -50,6 +50,8 @@ if (extension_loaded ('newrelic')) {
 $app->get('/', function () use ($app) {
     $app->render('pages/home.html.twig', array(
         'body_id' => 'home',
+        'html_title' => 'Bijles wiskunde A, B, C en D',
+        'html_description' => 'Kan je wel wat bijles wiskunde gebruiken? Neem dan contact op met De Bijlesformule.',
         'header_class' => 'hero',
         'js_min' => file_get_contents('includes/script.min.js'),
         'css_min' => file_get_contents('includes/home.css'),
@@ -59,6 +61,8 @@ $app->get('/', function () use ($app) {
 $app->get('/eindhoven', function () use ($app) {
     $app->render('pages/eindhoven.html.twig', array(
         'body_id' => 'eindhoven',
+        'html_title' => 'Bijles wiskunde A, B, C en D in Eindhoven',
+        'html_description' => 'De Bijlesformule geeft wiskundebijles in Eindhoven. Kan je wel wat bijles wiskunde gebruiken? Neem dan contact op met De Bijlesformule.',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
         'css_min' => file_get_contents('includes/home.css'),
@@ -68,6 +72,7 @@ $app->get('/eindhoven', function () use ($app) {
 $app->get('/over-mij', function () use ($app) {
     $app->render('pages/over-mij.html.twig', array(
         'body_id' => 'about-us',
+        'html_title' => 'Over mij',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
         'css_min' => file_get_contents('includes/home.css'),
@@ -78,6 +83,7 @@ $app->get('/pakketten', function () use ($app) {
 
     $app->render('pages/pakketten.html.twig', array(
         'body_id' => 'pricing',
+        'html_title' => 'Pakketten',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
         'css_min' => file_get_contents('includes/home.css'),
@@ -128,6 +134,7 @@ $app->get('/contact', function () use ($app) {
 
     $app->render('pages/contact.html.twig', array(
         'body_id' => 'contact-us',
+        'html_title'=> 'Contact',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
         'css_min' => file_get_contents('includes/home.css'),
