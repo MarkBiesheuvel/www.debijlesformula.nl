@@ -56,6 +56,15 @@ $app->get('/', function () use ($app) {
     ));
 });
 
+$app->get('/eindhoven', function () use ($app) {
+    $app->render('pages/eindhoven.html.twig', array(
+        'body_id' => 'eindhoven',
+        'header_class' => 'normal',
+        'js_min' => file_get_contents('includes/script.min.js'),
+        'css_min' => file_get_contents('includes/home.css'),
+    ));
+});
+
 $app->get('/over-mij', function () use ($app) {
     $app->render('pages/over-mij.html.twig', array(
         'body_id' => 'about-us',
