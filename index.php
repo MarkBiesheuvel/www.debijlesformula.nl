@@ -39,13 +39,6 @@ $app->view()->parserExtensions = array(
     new \Slim\Views\TwigExtension(),
 );
 
-if (extension_loaded ('newrelic')) {
-    // Named transactions in New Relic
-    $app->hook('slim.before.dispatch', function() use ($app) {
-        newrelic_name_transaction($app->router()->getCurrentRoute()->getPattern());
-    });
-}
-
 // Routes
 $app->get('/', function () use ($app) {
     $app->render('pages/home.html.twig', array(
