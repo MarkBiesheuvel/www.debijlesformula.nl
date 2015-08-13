@@ -80,24 +80,24 @@ $app->get('/pakketten', function () use ($app) {
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
         'css_min' => file_get_contents('includes/home.css'),
-        'default_rate' => 45,
+        'default_rate' => 25,
         'packages' => array(
             array(
                 'name' => 'Pakket A',
                 'class' => 'first',
-                'price' => 210,
+                'price' => 135,
                 'hours' => 6,
             ),
             array(
                 'name' => 'Pakket B',
                 'class' => 'featured',
-                'price' => 360,
+                'price' => 240,
                 'hours' => 12,
             ),
             array(
                 'name' => 'Pakket C',
                 'class' => 'last',
-                'price' => 600,
+                'price' => 420,
                 'hours' => 24,
             ),
         ),
@@ -151,8 +151,8 @@ $app->post('/contact', function () use ($app) {
     $message = array(
         'html' => $html,
         'subject' => 'Contactformulier | ' . $params['name_student'],
-        'from_email' => 'info@wiskundebijl.es',
-        'from_name' => 'Wiskundebijl.es',
+        'from_email' => 'info@debijlesformule.nl',
+        'from_name' => 'De Bijlesformule',
         'to' => array(
             array(
                 'email' => 'mail@markbiesheuvel.nl',
