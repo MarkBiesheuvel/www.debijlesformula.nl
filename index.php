@@ -150,7 +150,7 @@ $app->post('/contact', function () use ($app) {
 
     $message = array(
         'html' => $html,
-        'subject' => 'Contactformulier | ' . $params['name_student'],
+        'subject' => 'Contactformulier | ' . $params['name'],
         'from_email' => 'info@debijlesformule.nl',
         'from_name' => 'De Bijlesformule',
         'to' => array(
