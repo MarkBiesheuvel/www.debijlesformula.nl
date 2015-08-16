@@ -5,7 +5,7 @@
     images = document.querySelectorAll('img.lazy');
 
     // Only load images after browser has some time on its hands
-    setTimeout(function(){
+    window.addEventListener('load', function() {
 
         // Iterate over items
         for(; i<images.length; i++){
@@ -20,6 +20,6 @@
             image.removeAttribute('data-src');
             image.classList.remove('lazy');
         }
-    }, 0);
+    });
 })(0);
 
