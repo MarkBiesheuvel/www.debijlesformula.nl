@@ -137,7 +137,7 @@ $app->get('/contact', function () use ($app) {
 
 $app->post('/contact', function () use ($app) {
 
-    $keys = array('name_parent', 'name_student', 'email', 'phone', 'level', 'year', 'subject', 'message');
+    $keys = array('name', 'email', 'phone', 'level', 'year', 'subject', 'message');
     $params = array();
 
     foreach ($keys as $key) {
