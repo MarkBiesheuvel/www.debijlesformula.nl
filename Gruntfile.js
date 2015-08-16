@@ -35,7 +35,8 @@ module.exports = function (grunt) {
                 options: {
                     sassDir: 'css',
                     cssDir: 'css/compiled',
-                    environment: 'production'
+                    environment: 'production',
+                    importPath: ['node_modules/bootstrap-sass']
                 }
             }
         },
@@ -88,8 +89,7 @@ module.exports = function (grunt) {
                 files: 'css/**/*.scss',
                 tasks: ['build:css'],
                 options: {
-                    interrupt: true,
-                    sourcemap: true
+                    interrupt: true
                 }
             },
             livereload: {
