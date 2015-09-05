@@ -172,11 +172,21 @@ $app->post('/contact', function () use ($app) {
     $result = $mandrill->messages->send($message, false);
 
     if($result[0]['status'] == 'sent'){
-        $app->flash('info', 'Uw bericht is verzonden. Ik zal hier zo spoedig mogelijk op reageren.');
+        $app->redirect('/bedankt-voor-uw-vraag');
     }else{
         $app->flash('error', 'Er is iets mis gegaan tijdens het versuren van uw bericht. U kunt uw bericht ook mailen naar <a href="mailto:mail@markbiesheuvel.nl">mail@markbiesheuvel.nl</a>.');
+        $app->redirect('/contact');
     }
-    $app->redirect('/contact');
+});
+
+$app->get('/bedankt-voor-uw-vraag', function() use ($app){
+    $app->render('pages/bedankt.html.twig', array(
+        'body_id' => '',
+        'html_title' => 'Bedankt voor uw vraag',
+        'header_class' => 'normal',
+        'js_min' => file_get_contents('includes/script.min.js'),
+        'css_min' => file_get_contents('includes/home.css'),
+    ));
 });
 
 $app->get('/ping', function () use ($app) {

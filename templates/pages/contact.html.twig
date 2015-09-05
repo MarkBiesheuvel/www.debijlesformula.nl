@@ -1,13 +1,6 @@
 {% extends "layout.html.twig" %}
 {% block content %}
 
-    {% if flash['info'] %}
-        <div class="container">
-            <div class="alert alert-success" role="alert">
-                {{ flash['info'] | raw }}
-            </div>
-        </div>
-    {% endif %}
     {% if flash['error'] %}
         <div class="container">
             <div class="alert alert-danger" role="alert">
