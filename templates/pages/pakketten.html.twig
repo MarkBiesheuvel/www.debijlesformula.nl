@@ -31,7 +31,8 @@
                     <div class="plan-name">{{ package['name'] }}</div>
                     <div class="quantity">
                         <span class="dollar">&euro;</span>
-                        <span class="price">{{ package['price'] }}</span>
+                        <span class="price">{{ (package['price'] / package['hours'])|number_format(2, '.', ',') }}</span>
+                        <span class="dollar">/ uur</span>
                     </div>
                     <div class="specs">
                         <div class="spec">
@@ -39,8 +40,8 @@
                             uur
                         </div>
                         <div class="spec">
-                            <span class="variable">&euro;{{ package['price'] / package['hours'] }}</span>
-                            per uur
+                            <span class="variable">&euro;{{ package['price'] }}</span>
+                            totaal
                         </div>
                         <div class="spec">
                             <span class="variable">&euro;{{ package['hours'] * default_rate - package['price']  }}</span>
@@ -56,7 +57,7 @@
                     <div class="plan-name">Losse les</div>
                     <div class="quantity">
                         <span class="dollar">&euro;</span>
-                        <span class="price">{{ default_rate }}</span>
+                        <span class="price">{{ default_rate|number_format(2, '.', ',') }}</span>
                     </div>
                     <p class="description">
                         Wil je snel 1 of 2 lessen om voor een proefwerk voor te bereiden?<br>
