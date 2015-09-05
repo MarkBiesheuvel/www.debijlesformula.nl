@@ -49,7 +49,7 @@
 			/*background: rgba(13, 37, 102, 0.24);*/
 			background: rgba(32, 54, 114, 0.29);
 		}
-		
+
 		.container {
 			position: relative;
 			z-index: 33;
@@ -65,8 +65,7 @@
 			letter-spacing: .3px;
 			color: #FFF;
 			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-
-			-webkit-animation-duration: 1s;
+webkit-animation-duration: 1s;
 
 			@media (max-width: 767px) {
 				font-size: 25px;
@@ -77,7 +76,7 @@
 		}
 
 		.sub-text {
-			-webkit-font-smoothing: antialiased;
+webkit-font-smoothing: antialiased;
 			width: 50%;
 			margin-top: 25px;
 			font-family: $lato;
@@ -86,8 +85,7 @@
 			font-size: 18px;
 			line-height: 28px;
 			text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-
-			-webkit-animation-duration: 1s;
+webkit-animation-duration: 1s;
 
 			@media (max-width: 991px) {
 				width: 70%;
@@ -149,7 +147,7 @@
 
 	#testimonials {
 		margin-top: 90px;
-		-webkit-font-smoothing: antialiased;
+webkit-font-smoothing: antialiased;
 
 		.header {
 			text-align: center;
@@ -171,7 +169,7 @@
 				margin-bottom: 45px;
 			}
 
-			.quote {			
+			.quote {
 				font-size: 13px;
 				color: #3D3D3D;
 				line-height: 24px;
@@ -241,36 +239,58 @@
 		}
 	}
 
-	#cta {
-		text-align: center;
-		margin-top: 120px;
+}
 
-		p {
-			font-family: $lato;
-			font-size: 17px;
-			color: #7A7D81;
-			letter-spacing: 0.1px;
-		}
+#home,
+#eindhoven {
+    #cta {
+        margin-top: 100px;
+        -webkit-font-smoothing: antialiased;
 
-		a {
-			display: inline-block;
-			margin-top: 25px;
-			background: #6CAAE4;
-			color: #FFF;
-			padding: 23px 40px;
-			font-size: 17px;
-			letter-spacing: 0.7px;
-			font-weight: 300;
-			font-family: Lato;
-			text-transform: uppercase;
-			border-radius: 5px;
+        @media (max-width: 991px) {
+            margin-top: 65px;
+        }
 
-			@include transition(all .2s linear);
+        .form-wrapper {
+            background: #F7F8FB;
+            border: 1px solid #EAEDF7;
+            border-radius: 8px;
+            box-shadow: inset rgba(100, 100, 100, 0.25) 0 1px 1px;
+            padding: 20px 30px 30px 30px;
+            margin: 0 auto;
+        }
+        h4 {
+            font-size: 21px;
+            color: #5F6E7C;
+            font-weight: 400;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+        }
+        form {
+            margin-top: 30px;
 
-			&:hover {
-				text-decoration: none;
-				background: #3FD8DF;
-			}
-		}
-	}
+            .form-group {
+                margin-right: 25px;
+
+                @media (max-width: 991px) {
+                    margin-right: 20px;
+                }
+
+                .form-control {
+                    width: 195px;
+
+                    @media (max-width: 767px) {
+                        width: 100%;
+                    }
+                }
+            }
+            .button {
+                margin-left: 25px;
+
+                @media (max-width: 991px) {
+                    margin-top: 25px;
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
 }

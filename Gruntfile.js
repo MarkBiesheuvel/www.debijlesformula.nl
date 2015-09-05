@@ -68,6 +68,13 @@ module.exports = function (grunt) {
                 url : 'http://dev.debijlesformule.nl/contact',
                 width : 1300,
                 height : 900
+            },
+            eindhoven : {
+                outfile : 'includes/eindhoven.css',
+                css : 'css/compiled/theme.css',
+                url : 'http://dev.debijlesformule.nl/eindhoven',
+                width : 1300,
+                height : 900
             }
         },
         watch: {
