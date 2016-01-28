@@ -40,43 +40,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-        penthouse: {
-            home : {
-                outfile : 'includes/home.css',
-                css : 'css/compiled/theme.css',
-                url : 'http://dev.debijlesformule.nl/',
-                width : 1300,
-                height : 900
-            },
-            overmij : {
-                outfile : 'includes/over-mij.css',
-                css : 'css/compiled/theme.css',
-                url : 'http://dev.debijlesformule.nl/over-mij',
-                width : 1300,
-                height : 900
-            },
-            pakketten : {
-                outfile : 'includes/pakketten.css',
-                css : 'css/compiled/theme.css',
-                url : 'http://dev.debijlesformule.nl/pakketten',
-                width : 1300,
-                height : 900
-            },
-            contact : {
-                outfile : 'includes/contact.css',
-                css : 'css/compiled/theme.css',
-                url : 'http://dev.debijlesformule.nl/contact',
-                width : 1300,
-                height : 900
-            },
-            eindhoven : {
-                outfile : 'includes/eindhoven.css',
-                css : 'css/compiled/theme.css',
-                url : 'http://dev.debijlesformule.nl/eindhoven',
-                width : 1300,
-                height : 900
-            }
-        },
         watch: {
             config: {
                 files: ['Gruntfile.js', 'config.rb'],
@@ -120,7 +83,7 @@ module.exports = function (grunt) {
     grunt.registerTask(
         'build:css',
         'Compile CSS',
-        ['compass:build', 'penthouse']
+        ['compass:build']
     );
 
     grunt.registerTask(

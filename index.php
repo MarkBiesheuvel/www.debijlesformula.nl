@@ -47,7 +47,6 @@ $app->get('/', function () use ($app) {
         'html_description' => 'Kan je wel wat bijles wiskunde gebruiken? Neem dan contact op met De Bijlesformule.',
         'header_class' => 'hero',
         'js_min' => file_get_contents('includes/script.min.js'),
-        'css_min' => file_get_contents('includes/home.css'),
     ));
 });
 
@@ -58,7 +57,6 @@ $app->get('/eindhoven', function () use ($app) {
         'html_description' => 'De Bijlesformule geeft wiskundebijles in Eindhoven. Kan je wel wat bijles wiskunde gebruiken? Neem dan contact op met De Bijlesformule.',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
-        'css_min' => file_get_contents('includes/home.css'),
     ));
 });
 
@@ -68,7 +66,6 @@ $app->get('/over-mij', function () use ($app) {
         'html_title' => 'Over mij',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
-        'css_min' => file_get_contents('includes/home.css'),
     ));
 });
 
@@ -79,7 +76,6 @@ $app->get('/pakketten', function () use ($app) {
         'html_title' => 'Pakketten',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
-        'css_min' => file_get_contents('includes/home.css'),
         'default_rate' => 25,
         'packages' => array(
             array(
@@ -130,53 +126,8 @@ $app->get('/contact', function () use ($app) {
         'html_title'=> 'Contact',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
-        'css_min' => file_get_contents('includes/home.css'),
         'message' => $message,
     ));
-});
-
-$app->post('/contact', function () use ($app) {
-
-    $keys = array('name', 'email', 'phone', 'level', 'year', 'subject', 'message');
-    $params = array();
-
-    foreach ($keys as $key) {
-        $params[$key] = $app->request->post($key);
-    }
-
-    $html = $app->view->render('email.html.twig', $params);
-
-    $mandrill = new Mandrill();
-
-    $message = array(
-        'html' => $html,
-        'subject' => 'Contactformulier | ' . $params['name'],
-        'from_email' => 'info@debijlesformule.nl',
-        'from_name' => 'De Bijlesformule',
-        'to' => array(
-            array(
-                'email' => 'mail@markbiesheuvel.nl',
-                'name' => 'Mark Biesheuvel',
-                'type' => 'to'
-            )
-        ),
-        'headers' => array('Reply-To' => $params['email']),
-        'important' => false,
-        'tags' => array('contact-form'),
-        'track_opens' => false,
-        'track_clicks' => false,
-        'auto_text' => true,
-        'inline_css' => true,
-    );
-
-    $result = $mandrill->messages->send($message, false);
-
-    if($result[0]['status'] == 'sent'){
-        $app->redirect('/bedankt-voor-uw-vraag');
-    }else{
-        $app->flash('error', 'Er is iets mis gegaan tijdens het versuren van uw bericht. U kunt uw bericht ook mailen naar <a href="mailto:mail@markbiesheuvel.nl">mail@markbiesheuvel.nl</a>.');
-        $app->redirect('/contact');
-    }
 });
 
 $app->get('/bedankt-voor-uw-vraag', function() use ($app){
@@ -185,13 +136,7 @@ $app->get('/bedankt-voor-uw-vraag', function() use ($app){
         'html_title' => 'Bedankt voor uw vraag',
         'header_class' => 'normal',
         'js_min' => file_get_contents('includes/script.min.js'),
-        'css_min' => file_get_contents('includes/home.css'),
     ));
-});
-
-$app->get('/ping', function () use ($app) {
-    $app->response->headers->set('Content-Type', 'text/plain');
-    echo 'pong';
 });
 
 $app->run();
