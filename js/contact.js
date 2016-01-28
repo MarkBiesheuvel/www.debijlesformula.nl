@@ -5,7 +5,7 @@
     var url = 'https://s4kxk6t0y4.execute-api.us-east-1.amazonaws.com/prod/send_mail';
 
     var get = function (field) {
-        var element = document.querySelector('input[name=' + field + ']');
+        var element = document.querySelector('[name=' + field + ']');
         if (element) {
             return element.value;
         } else {
