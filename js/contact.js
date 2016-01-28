@@ -22,7 +22,7 @@
         r.onreadystatechange = function () {
             if (r.readyState != 4) return;
             if (r.status === 200) {
-                window.location = 'bedankt-voor-uw-vraag';
+                window.location = '/bedankt-voor-uw-vraag';
             } else {
                 alert('Er is iets mis gegaan bij het versturen van uw bericht. Probeer het later nogmaals.');
             }
