@@ -1,17 +1,27 @@
 {
-  "name": "wiskundebijles",
-  "version": "0.1.0",
+  "name": "debijlesformule",
+  "version": "0.2.0",
   "description": "http://www.debijlesformule.nl",
   "author": "Mark Biesheuvel <mail@markbiesheuvel.nl>",
-  "license": "CC-NC-ND",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarkBiesheuvel/www.debijlesformule.nl"
+  },
+  "license": "CC-BY-NC-ND-4.0",
   "devDependencies": {
-    "bootstrap-sass": "latest",
-    "grunt": "latest",
-    "grunt-contrib-compass": "latest",
-    "grunt-contrib-jshint": "latest",
-    "grunt-penthouse": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-watch": "latest",
-    "load-grunt-tasks": "latest"
+    "bootstrap-sass": "*",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-compass": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-html-build": "*",
+    "grunt-uncss": "*",
+    "load-grunt-tasks": "*"
   }
 }

@@ -1,8 +1,5 @@
-.sass-cache/*
-node_modules/*
-bower_components/*
-.idea/*
-vendor/*
-\.env
-logs/*
-cache/*
+.sass-cache/
+node_modules/
+.idea/
+dist/
+tmp/
