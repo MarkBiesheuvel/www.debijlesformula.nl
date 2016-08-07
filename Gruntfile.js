@@ -172,7 +172,7 @@ module.exports = function (grunt) {
                 }
             },
             html: {
-                files: ['src/html/*.html'],
+                files: ['src/html/**/*.html'],
                 tasks: ['build'],
                 options: {
                     interrupt: true
