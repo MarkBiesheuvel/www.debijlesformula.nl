@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                 files: {
                     'tmp/tidy.css': [
                         'tmp/index.html',
-                        'tmp/eindhoven.html',
+                        'tmp/amsterdam.html',
                         'tmp/over-mij.html',
                         'tmp/contact.html',
                         'tmp/bedankt-voor-uw-vraag.html'
@@ -87,17 +87,17 @@ module.exports = function (grunt) {
                     }
                 }
             },
-            eindhoven: {
+            amsterdam: {
                 src: 'src/html/layout.html',
-                dest: 'tmp/eindhoven.html',
+                dest: 'tmp/amsterdam.html',
                 options: {
                     sections: {
-                        templates: 'src/html/pages/eindhoven.html'
+                        templates: 'src/html/pages/amsterdam.html'
                     },
                     data: {
-                        body_id: 'eindhoven',
-                        html_title: 'Bijles wiskunde A, B, C en D in Eindhoven',
-                        html_description: 'De Bijlesformule geeft wiskundebijles in Eindhoven. Kan je wel wat bijles wiskunde gebruiken? Neem dan contact op met De Bijlesformule.',
+                        body_id: 'amsterdam',
+                        html_title: 'Bijles wiskunde A, B, C en D in Amsterdam',
+                        html_description: 'De Bijlesformule geeft wiskundebijles in Amsterdam. Kan je wel wat bijles wiskunde gebruiken? Neem dan contact op met De Bijlesformule.',
                         header_class: 'normal'
                     }
                 }
@@ -156,7 +156,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'dist/index.html': 'tmp/index.html',
-                    'dist/eindhoven.html': 'tmp/eindhoven.html',
+                    'dist/amsterdam.html': 'tmp/amsterdam.html',
                     'dist/over-mij.html': 'tmp/over-mij.html',
                     'dist/contact.html': 'tmp/contact.html',
                     'dist/bedankt-voor-uw-vraag.html': 'tmp/bedankt-voor-uw-vraag.html'
