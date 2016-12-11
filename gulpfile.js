@@ -44,7 +44,18 @@ gulp.task('js', () => {
 })
 
 gulp.task('html', () => {
+
+  const inline = require('gulp-inline')
+  const htmlmin = require('gulp-htmlmin')
+  const svgmin = require('gulp-svgmin')
+
   return gulp.src('./src/html/*.html')
+    .pipe(inline({
+      base: 'src/',
+      svg: svgmin(),
+      disabledTypes: ['img', 'css', 'js'], // Only inline svg files
+    }))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('./dist'))
     .pipe(livereload())
 })
@@ -60,7 +71,7 @@ gulp.task('build', ['css', 'js', 'html', 'img'])
 gulp.task('watch', () => {
   livereload.listen();
   gulp.watch('./src/css/*.css', ['css'])
-  gulp.watch('./src/html/*.html', ['html'])
+  gulp.watch(['./src/html/*.html', './src/logo.svg'], ['html'])
   gulp.watch('./src/js/*.js', ['js'])
   gulp.watch('./src/images/**/*.*', ['img'])
 })
