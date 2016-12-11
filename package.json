@@ -1,27 +1,26 @@
 {
   "name": "debijlesformule",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "http://www.debijlesformule.nl",
   "author": "Mark Biesheuvel <mail@markbiesheuvel.nl>",
   "repository": {
     "type": "git",
     "url": "https://github.com/MarkBiesheuvel/www.debijlesformule.nl"
   },
+  "scripts": {
+    "deploy": "aws s3 sync dist s3://debijlesformule.nl --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers"
+  },
   "license": "CC-BY-NC-ND-4.0",
   "devDependencies": {
-    "bootstrap-sass": "*",
-    "grunt": "*",
-    "grunt-cli": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-contrib-cssmin": "*",
-    "grunt-contrib-compass": "*",
-    "grunt-contrib-copy": "*",
-    "grunt-contrib-htmlmin": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-html-build": "*",
-    "grunt-uncss": "*",
-    "load-grunt-tasks": "*"
+    "autoprefixer": "^6.5.3",
+    "babel-preset-es2015": "^6.18.0",
+    "cssnano": "^3.8.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0"
   }
 }

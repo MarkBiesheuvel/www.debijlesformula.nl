@@ -1,25 +1,31 @@
-(function (document, byId, block, none) {
+((document) => {
 
-    var english = document[byId]('english');
-    var dutch = document[byId]('dutch');
-    var button = document[byId]('translate-button');
-    var isEnglish = true;
-    var setDisplay = function (element, value) {
-        element.style.display = value;
-    };
+  const $ = document.getElementById.bind(document)
 
-    button.addEventListener('click', function () {
+  const english = $('english')
+  const dutch = $('dutch')
+  const button = $('translate-button')
 
-        if (isEnglish) {
-            setDisplay(dutch, block);
-            setDisplay(english, none);
-            button.innerHTML = '[Origineel]';
-        } else {
-            setDisplay(dutch, none);
-            setDisplay(english, block);
-            button.innerHTML = '[Vertaal]';
-        }
-        isEnglish ^= true
-    });
+  let isEnglish = true;
+  const show = (element) => {
+    element.style.display = 'block';
+  }
+  const hide = (element) => {
+    element.style.display = 'none'
+  }
 
-})(document, 'getElementById', 'block', 'none');
+  button.addEventListener('click', () => {
+
+    if (isEnglish) {
+      show(dutch)
+      hide(english)
+      button.innerHTML = '[Origineel]'
+    } else {
+      hide(dutch)
+      show(english)
+      button.innerHTML = '[Vertaal]'
+    }
+    isEnglish ^= true
+  })
+
+})(document)
