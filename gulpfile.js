@@ -1,8 +1,9 @@
 const gulp = require('gulp')
 const sourcemaps = require('gulp-sourcemaps')
 const livereload = require('gulp-livereload')
+const pump = require('pump')
 
-gulp.task('css', () => {
+gulp.task('css', (callback) => {
 
   // Plugins
   const postcss = require('gulp-postcss')
@@ -16,54 +17,68 @@ gulp.task('css', () => {
     cssnano()
   ]
 
-  return gulp.src('./src/css/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(postcss(processors))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist'))
-    .pipe(livereload())
+  pump([
+      gulp.src('./src/css/*.css'),
+      sourcemaps.init(),
+      postcss(processors),
+      sourcemaps.write('.'),
+      gulp.dest('./dist'),
+      livereload()
+    ],
+    callback
+  )
 })
 
-gulp.task('js', () => {
+gulp.task('js', (callback) => {
 
   // Plugins
   const babel = require('gulp-babel')
   const concat = require('gulp-concat')
   const uglify = require('gulp-uglify')
 
-  return gulp.src('./src/js/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(babel({
-      presets: ['es2015']
-    }))
-    .pipe(concat('script.js'))
-    // .pipe(uglify())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist'))
-    .pipe(livereload())
+  pump([
+      gulp.src('./src/js/*.js'),
+      sourcemaps.init(),
+      babel({ presets: ['es2015'] }),
+      concat('script.js'),
+      uglify(),
+      sourcemaps.write('.'),
+      gulp.dest('./dist'),
+      livereload()
+    ],
+    callback
+  )
 })
 
-gulp.task('html', () => {
+gulp.task('html', (callback) => {
 
   const inline = require('gulp-inline')
   const htmlmin = require('gulp-htmlmin')
   const svgmin = require('gulp-svgmin')
 
-  return gulp.src('./src/html/*.html')
-    .pipe(inline({
-      base: 'src/',
-      svg: svgmin(),
-      disabledTypes: ['img', 'css', 'js'], // Only inline svg files
-    }))
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('./dist'))
-    .pipe(livereload())
+  pump([
+      gulp.src('./src/html/*.html'),
+      inline({
+        base: 'src/',
+        svg: svgmin(),
+        disabledTypes: ['img', 'css', 'js'],
+      }),
+      htmlmin({ collapseWhitespace: true }),
+      gulp.dest('./dist'),
+      livereload()
+    ],
+    callback
+  )
 })
 
-gulp.task('img', () => {
-  return gulp.src('./src/images/**/*.*')
-    .pipe(gulp.dest('./dist/images'))
-    .pipe(livereload())
+gulp.task('img', (callback) => {
+
+  pump([
+      gulp.src('./src/images/**/*.*'),
+      gulp.dest('./dist/images'),
+      livereload()
+    ],
+    callback)
 })
 
 gulp.task('build', ['css', 'js', 'html', 'img'])

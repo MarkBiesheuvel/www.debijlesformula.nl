@@ -24,6 +24,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-svgmin": "^1.2.3",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^2.0.0",
+    "pump": "^1.0.1"
   }
 }
