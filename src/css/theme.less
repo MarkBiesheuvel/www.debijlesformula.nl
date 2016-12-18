@@ -1,0 +1,53 @@
+
+:root {
+  --base-color: #021B36;
+  --brand-color: #3A6DA7;
+}
+
+body {
+  font-family: Segoe UI, Calibri, Helvetica, sans-serif;
+  margin: 40px auto;
+  max-width: 750px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: var(--base-color);
+  padding: 0 10px
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  color: var(--brand-color)
+}
+
+.pic {
+  border: 0;
+  border-radius: 50%;
+  height: 71px;
+  width: 71px;
+}
+
+.select {
+  border-bottom: 2px solid var(--brand-color);
+  display: inline-block;
+  cursor: pointer;
+  height: 22px;
+  padding: 0 2px;
+  margin: 0 -2px;
+}
+
+.list {
+  display: none;
+  color: white;
+  cursor: pointer;
+  margin: 0;
+
+  li {
+    display: block;
+    background: var(--brand-color);
+    padding: 12px 22px;
+
+    &:hover {
+      background: var(--base-color);
+    }
+  }
+}

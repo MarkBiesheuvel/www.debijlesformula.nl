@@ -6,21 +6,20 @@ const pump = require('pump')
 gulp.task('css', (callback) => {
 
   // Plugins
+  const rename = require('gulp-rename')
   const postcss = require('gulp-postcss')
 
-  // Processors
-  const autoprefixer = require('autoprefixer')
-  const cssnano = require('cssnano')
-
   const processors = [
-    autoprefixer(),
-    cssnano()
+    require('cssnano')(),
+    require('postcss-cssnext')(),
+    require('postcss-nested')()
   ]
 
   pump([
-      gulp.src('./src/css/*.css'),
+      gulp.src('./src/css/theme.less'),
       sourcemaps.init(),
       postcss(processors),
+      rename('theme.css'),
       sourcemaps.write('.'),
       gulp.dest('./dist'),
       livereload()
@@ -85,7 +84,7 @@ gulp.task('build', ['css', 'js', 'html', 'img'])
 
 gulp.task('watch', () => {
   livereload.listen();
-  gulp.watch('./src/css/*.css', ['css'])
+  gulp.watch('./src/css/*.less', ['css'])
   gulp.watch(['./src/html/*.html', './src/logo.svg'], ['html'])
   gulp.watch('./src/js/*.js', ['js'])
   gulp.watch('./src/images/**/*.*', ['img'])
