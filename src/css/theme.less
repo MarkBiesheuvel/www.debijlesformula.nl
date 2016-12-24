@@ -2,20 +2,22 @@
 :root {
   --base-color: #021B36;
   --brand-color: #3A6DA7;
+  --font-size: 16px;
+  --baseline: 22px;
 }
 
 body {
   font-family: Segoe UI, Calibri, Helvetica, sans-serif;
   margin: 40px auto;
   max-width: 750px;
-  line-height: 1.6;
-  font-size: 18px;
   color: var(--base-color);
-  padding: 0 10px
+  padding: 0 var(--baseline);
+  line-height: var(--baseline);
+  font-size: var(--font-size);
 }
 
 h1, h2, h3 {
-  line-height: 1.2;
+  line-height: var(--baseline)*2;
   color: var(--brand-color)
 }
 
@@ -26,13 +28,30 @@ h1, h2, h3 {
   width: 71px;
 }
 
+.box {
+  padding: 10% 0;
+}
+
 .select {
   border-bottom: 2px solid var(--brand-color);
   display: inline-block;
   cursor: pointer;
-  height: 22px;
+  height: var(--baseline);
   padding: 0 2px;
-  margin: 0 -2px;
+  margin: 0 0 0 -2px;
+}
+
+.input {
+  width: 100px;
+  border: 0;
+  border-bottom: 2px solid var(--brand-color);
+  display: inline-block;
+  line-height: var(--baseline);
+  font-size: var(--font-size);
+}
+
+.form {
+  line-height: 2em;
 }
 
 .list {
